@@ -4,19 +4,20 @@ import ExemptionList from'./components/exemptionList'
 import {connect} from 'react-redux'
 import React, {Component} from 'react'
 import { fetchExemptions } from './actions/exemptionActions'
-import { CSVLink, CSVDownload } from "react-csv";
+import { addExemption } from './actions/exemptionActions'
+
+import { CSVLink } from "react-csv";
 
 class App extends Component{
 componentDidMount(){
   this.props.getExemptions() 
 }
 
-
   render(){
   return (
   <div> 
   {/* <NavBar/>  */}
-  <ExemptionForm/>
+  <ExemptionForm addExemption ={this.props.addExemption}/>
   <ExemptionList exemptions ={this.props.exemptions}/> 
   <CSVLink data={this.props.exemptions} seperator={";"}> 
   Download all the current isins
@@ -36,7 +37,8 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch => {
   console.log("From map dispatch")
   return {
-    getExemptions:() => dispatch(fetchExemptions())   
+    getExemptions:() => dispatch(fetchExemptions()), 
+    addExemption: () => dispatch(addExemption())   
   }
 }
 

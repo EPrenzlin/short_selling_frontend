@@ -8,7 +8,15 @@ const exemptionReducer = (state= {exemptions:[] }, action) => {
             ...state,
             exemptions: action.exemptions 
         }
-        default:
+
+    case 'ADD_EXEMPTION':
+        console.log(action) 
+        return{
+            ...state, 
+            exemptions:[...state.exemptions,action]
+        }
+        
+    default:
         return state;
     }
   }

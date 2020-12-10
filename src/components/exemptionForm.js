@@ -1,11 +1,46 @@
 import React, {Component} from 'react' 
 
 export default class exemptionForm extends Component{
+
+    state = {
+        name:"", 
+        isin:"", 
+        stock_market:""
+    }
+
+    onSubmit = event => {
+        event.preventDefault()
+        const exemption = {name:this.state.name, isin:this.state.isin, stock_market:this.state.stock_market}
+        debugger
+        this.props.addExemption(exemption)
+        
+    }
+    handleChange = event => {
+        this.setState({
+          [event.target.name]: event.target.value
+        })
+      }
+
+
     render(){
         return(
-            <div> 
-            <h1> Hello from exemptionForm </h1> 
-             </div>
+    <div> 
+        <form onSubmit={this.onSubmit}>
+        <label>
+        Name:
+        <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
+        </label>
+        <label> 
+        ISIN: 
+        <input type="text" name ="isin" value={this.state.isin} onChange={this.handleChange} /> 
+        </label> 
+        <label> 
+        Stock Market
+        <input type ="text" name="stock_market" value={this.state.stock_market} onChange={this.handleChange} /> 
+        </label>
+        <input type="submit" value="Submit" />
+        </form>              
+</div>
         )
       
     }

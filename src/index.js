@@ -17,11 +17,6 @@ ReactDOM.render(
 );
 
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-
-
 // routes go her ; we'll have an index page where we can see all the existing exmpetions and also download into csv
 // we'll have an form page where we can add in new exemption, and also 
 // we'll have a log-in page as well?
