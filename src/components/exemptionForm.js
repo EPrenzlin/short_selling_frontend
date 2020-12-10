@@ -11,10 +11,14 @@ export default class exemptionForm extends Component{
     onSubmit = event => {
         event.preventDefault()
         const exemption = {name:this.state.name, isin:this.state.isin, stock_market:this.state.stock_market}
-        debugger
         this.props.addExemption(exemption)
-        
+        this.setState({
+            name:"", 
+            isin:"",  
+            stock_market:""
+        })
     }
+    
     handleChange = event => {
         this.setState({
           [event.target.name]: event.target.value
