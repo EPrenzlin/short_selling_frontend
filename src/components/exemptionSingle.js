@@ -4,6 +4,11 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 export default class ExemptionSingle extends Component{
+
+    onClick = () =>{
+        console.log(this.props.exemption.id)
+    }
+
 render(){
     return(
         <Card style={{ width: '21rem' }}>
@@ -12,7 +17,7 @@ render(){
             <Card.Text>
             ISIN: {this.props.exemption.isin} <br/>
             Stock Market: {this.props.exemption.stock_market} <br/> 
-            <Button variant="primary" size='sm' >Remove from DB</Button> 
+            <Button variant="primary" size='sm' onClick={this.onClick}>Remove from DB</Button> 
             </Card.Text>
         </Card.Body>
         </Card>

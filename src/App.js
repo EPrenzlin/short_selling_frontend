@@ -26,7 +26,7 @@ componentDidMount(){
       <NavBar/>
       <Route exact path ="/new" render={() => <ExemptionForm addExemption ={this.props.addExemption}/>} /> 
       <Route exact path ="/home" render={() => <ExemptionList exemptions ={this.props.exemptions}/>} /> 
-      <Route exact path ="/download" render={() => <CSVLink data={this.props.exemptions} seperator={";"}> DownLoad to CSV</CSVLink>} /> 
+      <Route exact path ="/download" render={() => <CSVLink data={this.props.exemptions} seperator={";"}> Download to CSV</CSVLink>} /> 
       </Router>
       {/* <ExemptionForm addExemption ={this.props.addExemption}/> */}
       {/* <ExemptionList exemptions ={this.props.exemptions}/>  */}
