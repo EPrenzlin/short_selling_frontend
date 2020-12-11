@@ -7,7 +7,7 @@ export default class ExemptionList extends Component{
         return( 
             <ul> 
             {this.props.exemptions.map(exemption => {
-            return <ExemptionSingle exemption ={exemption} key={exemption.id}/> 
+            return <ExemptionSingle exemption ={exemption} key={exemption.id} deleteExemption={this.props.deleteExemption}/> 
             })}
              </ul>
         )

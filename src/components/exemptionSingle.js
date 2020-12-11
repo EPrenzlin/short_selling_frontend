@@ -5,12 +5,15 @@ import Button from 'react-bootstrap/Button'
 
 export default class ExemptionSingle extends Component{
 
-    onClick = () =>{
+    onClick = (event) =>{
+        event.preventDefault() 
         console.log(this.props.exemption.id)
+        this.props.deleteExemption(this.props.exemption.id)
     }
 
 render(){
     return(
+        <div> 
         <Card style={{ width: '21rem' }}>
         <Card.Body>
             <Card.Title>{this.props.exemption.name}</Card.Title>
@@ -21,6 +24,9 @@ render(){
             </Card.Text>
         </Card.Body>
         </Card>
+        </div>
+
+
     )
 }
 }

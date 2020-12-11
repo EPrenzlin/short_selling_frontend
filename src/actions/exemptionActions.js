@@ -24,12 +24,24 @@
       .then(response => response.json())
       .then(NewExemption => {
         console.log("In the console log of new Exemption", NewExemption)
-        dispatch({type:'ADD_EXEMPTION',NewExemption})
+        dispatch({type:'ADD_EXEMPTION', NewExemption})
       })
       .catch(error => console.log(error))
     }
   }
 
+  export const deleteExemption = (id) => {
+    return dispatch => {
+    fetch(`http://localhost:3000/exemptions/${id}`,{
+        method:'DELETE', 
+        headers:{
+          'Content-Type':'application/json',
+        },
+      })
+      .then(exemption => {console.log("in the delete exemption action", exemption)
+      dispatch({type:'DELETE_EXEMPTION', id})  
+      })
+      .catch(error => console.log(error))
+    }
+  }
 
-    // supposed to add the the exemption list 
-    // input a delete as well

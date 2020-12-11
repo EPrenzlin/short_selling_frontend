@@ -3,7 +3,7 @@ import ExemptionForm from'./components/exemptionForm'
 import ExemptionList from'./components/exemptionList' 
 import {connect} from 'react-redux'
 import React, {Component} from 'react'
-import { getExemptions, addExemption } from './actions/exemptionActions'
+import { getExemptions, addExemption, deleteExemption } from './actions/exemptionActions'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSVLink } from "react-csv";
 import NavBar from './components/NavBar.js' 
@@ -24,8 +24,13 @@ componentDidMount(){
   <div>     
       <Router> 
       <NavBar/>
-      <Route exact path ="/new" render={() => <ExemptionForm addExemption ={this.props.addExemption}/>} /> 
-      <Route exact path ="/home" render={() => <ExemptionList exemptions ={this.props.exemptions}/>} /> 
+      <Route exact path ="/new" render={() => 
+      <div> 
+      <ExemptionForm addExemption ={this.props.addExemption}/> 
+      <ExemptionList exemptions={this.props.newExemptions}/> 
+      </div>
+      }/> 
+      <Route exact path ="/home" render={() => <ExemptionList exemptions ={this.props.exemptions} deleteExemption={this.props.deleteExemption}/>} /> 
       <Route exact path ="/download" render={() => <CSVLink data={this.props.exemptions} seperator={";"}> Download to CSV</CSVLink>} /> 
       </Router>
       {/* <ExemptionForm addExemption ={this.props.addExemption}/> */}
@@ -38,10 +43,11 @@ componentDidMount(){
 
 const mapStateToProps = state =>{
   return {
-    exemptions: state.exemptions
-    }
+    exemptions: state.exemptions, 
+    newExemptions: state.newExemptions
+  }
 }
 
 
-export default connect(mapStateToProps,{getExemptions, addExemption})(App)
+export default connect(mapStateToProps,{getExemptions, addExemption, deleteExemption})(App)
 

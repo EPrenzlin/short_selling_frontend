@@ -27,15 +27,3 @@ ReactDOM.render(
 // have the log-in/ pwd and then displaying the next display options. 
 // actions for my redux... add and delete. 
 // export to csv function for all newly created exemptions => maybe have a child of the form component, which will have it's state updated whenever 
-
-// ReactDOM.render((
-//   <Router>
-//     <div>
-//       <Navbar />
-//       <Route exact path="/" component={Home} />
-//       <Route exact path="/about" component={About} />
-//       <Route exact path="/login" component={Login} />
-//     </div>
-//   </Router>),
-//   document.getElementById('root')
-// );

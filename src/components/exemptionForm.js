@@ -1,4 +1,5 @@
 import React, {Component} from 'react' 
+import Button from 'react-bootstrap/Button'
 
 export default class exemptionForm extends Component{
 
@@ -27,7 +28,7 @@ export default class exemptionForm extends Component{
 
 
     render(){
-        return(
+        return(    
     <div> 
         <form onSubmit={this.onSubmit}>
         <label>
@@ -39,13 +40,16 @@ export default class exemptionForm extends Component{
         <input type="text" name ="isin" value={this.state.isin} onChange={this.handleChange} /> 
         </label> 
         <label> 
-        Stock Market
+        Stock Market: 
         <input type ="text" name="stock_market" value={this.state.stock_market} onChange={this.handleChange} /> 
         </label>
         <input type="submit" value="Submit" />
-        </form>              
+        </form> 
+
+        <Button variant="danger" className="justify-content-center">Finished Uploading</Button> 
 </div>
         )
       
     }
 }
+// add in a new container here for all the newly submitted isins, and be abel to download them. 
