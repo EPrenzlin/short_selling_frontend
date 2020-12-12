@@ -2,6 +2,7 @@
 import React, {Component} from 'react' 
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 
 export default class ExemptionSingle extends Component{
 
@@ -14,7 +15,7 @@ export default class ExemptionSingle extends Component{
 render(){
     return(
         <div> 
-        <Card style={{ width: '21rem' }}>
+        <Card className ="text-center" style={{ width: '21rem' }}>
         <Card.Body>
             <Card.Title>{this.props.exemption.name}</Card.Title>
             <Card.Text>

@@ -30,7 +30,7 @@ export default class exemptionForm extends Component{
     render(){
         return(    
     <div> 
-        <form onSubmit={this.onSubmit}>
+        <form className ="text-center" onSubmit={this.onSubmit}>
         <label>
         Name:
         <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
@@ -43,7 +43,7 @@ export default class exemptionForm extends Component{
         Stock Market: 
         <input type ="text" name="stock_market" value={this.state.stock_market} onChange={this.handleChange} /> 
         </label>
-        <input type="submit" value="Submit" />
+        <Button type="submit">Create a New Exemption</Button>
         </form> 
 </div>
         )

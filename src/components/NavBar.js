@@ -9,7 +9,7 @@ export default class NavBar extends Component{
               <Nav.Link href="/home">All Exemptions</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/new">New Exemption</Nav.Link>
+              <Nav.Link href="/new">Make a new Exemption</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/search">Search</Nav.Link>

@@ -1,5 +1,5 @@
  
-const exemptionReducer = (state= {exemptions:[], newExemptions:[]}, action) => {
+const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchForm:{search:""}}, action) => {
 
     switch (action.type) {
     case 'SET_EXEMPTIONS':
@@ -14,7 +14,7 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[]}, action) => {
         return{
             ...state, 
             exemptions:[...state.exemptions,action.NewExemption],
-            newExemptions:[...state.newExemptions,action.NewExemption] 
+            newExemptions:[...state.newExemptions,action.NewExemption]
         }
 
     case 'DELETE_EXEMPTION':
@@ -33,6 +33,15 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[]}, action) => {
             newExemptions:[] 
 
         }
+    
+    // case 'SEARCH_FORM_STATE':
+    //     return{
+    //         ...state, 
+    //         exemptions:[...state.exemptions], 
+    //         newExemptions:[...state.newExemptions], 
+    //         stateForm:{search: action.value}
+    //     }
+    
 
     default:
         return state;
