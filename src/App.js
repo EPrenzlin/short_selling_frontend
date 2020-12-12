@@ -8,9 +8,7 @@ import {connect} from 'react-redux'
 import React, {Component} from 'react'
 import { getExemptions, addExemption, deleteExemption, refreshExemption } from './actions/exemptionActions'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { CSVLink } from "react-csv";
 import NavBar from './components/NavBar.js' 
-import { withRouter } from "react-router-dom";
 
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
@@ -43,6 +41,9 @@ componentDidMount(){
   )
   }  
 }
+
+// maybe worth just exploring the idea of having a download component. 
+
 
 const mapStateToProps = state =>{
   return {
