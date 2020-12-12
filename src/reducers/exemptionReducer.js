@@ -17,16 +17,22 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[]}, action) => {
             newExemptions:[...state.newExemptions,action.NewExemption] 
         }
 
-
-
     case 'DELETE_EXEMPTION':
         console.log("IN the delete exemption reducer", action)
         return{
             ...state, 
             exemptions: state.exemptions.filter(exemption => exemption.id !== action.id), 
-            newExemptions:[...state.newExemptions]
+            newExemptions:state.newExemptions.filter(exemption => exemption.id !== action.id)
         }
-    
+
+    case 'REFRESH':
+        console.log("in the refresh reducer")
+        return{
+            ...state,
+            exemptions:[...state.exemptions],
+            newExemptions:[] 
+
+        }
 
     default:
         return state;

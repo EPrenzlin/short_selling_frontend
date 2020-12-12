@@ -45,8 +45,6 @@ export default class exemptionForm extends Component{
         </label>
         <input type="submit" value="Submit" />
         </form> 
-
-        <Button variant="danger" className="justify-content-center">Finished Uploading</Button> 
 </div>
         )
       

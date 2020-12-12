@@ -12,10 +12,7 @@ export default class NavBar extends Component{
               <Nav.Link href="/new">New Exemption</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/search">Search Existing</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="/download">Download to CSV</Nav.Link>
+              <Nav.Link href="/search">Search</Nav.Link>
             </Nav.Item>
           </Nav>
         )
