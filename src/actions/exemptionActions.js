@@ -52,5 +52,12 @@
     }
   }
 
-  
+  export const searchItem = (search) =>{ 
+  console.log("In the Search Item action", search) 
+  return dispatch =>{
+    return(dispatch({type:"SEARCH_FORM_STATE", search}))
+  }
+  }
+
+
 

@@ -50,4 +50,3 @@ export default class exemptionForm extends Component{
       
     }
 }
-// add in a new container here for all the newly submitted isins, and be abel to download them. 

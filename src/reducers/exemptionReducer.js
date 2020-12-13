@@ -1,5 +1,5 @@
  
-const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchForm:{search:""}}, action) => {
+const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:[], errors:[]}, action) => {
 
     switch (action.type) {
     case 'SET_EXEMPTIONS':
@@ -33,15 +33,16 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchForm:{s
             newExemptions:[] 
 
         }
-    
-    // case 'SEARCH_FORM_STATE':
-    //     return{
-    //         ...state, 
-    //         exemptions:[...state.exemptions], 
-    //         newExemptions:[...state.newExemptions], 
-    //         stateForm:{search: action.value}
-    //     }
-    
+
+    case 'SEARCH_FORM_STATE':
+        console.log("in the search form reducer")
+        const foundItem = state.exemptions.filter(exemption =>{if(Object.values(exemption).includes(action.search)) { return exemption}})
+        return{
+            ...state, 
+            exemptions:[...state.exemptions], 
+            newExemptions:[...state.newExemptions], 
+            searchResult: foundItem
+        }
 
     default:
         return state;
@@ -49,3 +50,5 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchForm:{s
   }
 
   export default exemptionReducer 
+
+
