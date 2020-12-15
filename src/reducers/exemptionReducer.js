@@ -1,5 +1,5 @@
  
-const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:[], errors:[]}, action) => {
+const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:[] }, action) => {
 
     switch (action.type) {
     case 'SET_EXEMPTIONS':
@@ -22,7 +22,8 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:
         return{
             ...state, 
             exemptions: state.exemptions.filter(exemption => exemption.id !== action.id), 
-            newExemptions:state.newExemptions.filter(exemption => exemption.id !== action.id)
+            newExemptions:state.newExemptions.filter(exemption => exemption.id !== action.id), 
+            searchResult:state.searchResult.filter(exemption => exemption.id !== action.id)
         }
 
     case 'REFRESH':
@@ -31,22 +32,35 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:
             ...state,
             exemptions:[...state.exemptions],
             newExemptions:[] 
-
         }
 
     case 'SEARCH_FORM_STATE':
-        console.log("in the search form reducer")
-        const foundItem = state.exemptions.filter(exemption =>{if(Object.values(exemption).includes(action.search)) { return exemption}})
-        return{
-            ...state, 
-            exemptions:[...state.exemptions], 
-            newExemptions:[...state.newExemptions], 
-            searchResult: foundItem
-        }
+            console.log("in the search form reducer")
+            const searchValue = action.search.toString().toUpperCase().replace(/ /g, "") 
+            const foundItem = state.exemptions.filter(exemption =>  
+                {
+                const allValues = Object.values(exemption).map(exemption => exemption.toString().toUpperCase().replace(/ /g, ""))
+                if(allValues.includes(searchValue))
+                { return exemption }}
+                )
+
+
+
+            return{
+                ...state, 
+                exemptions:[...state.exemptions], 
+                newExemptions:[...state.newExemptions], 
+                searchResult: foundItem
+            }
 
     default:
         return state;
     }
+  }
+
+  const removeSpace = (string) =>{
+    const newText = string.toString().toUpperCase().replace(/ /g, "")
+    return newText
   }
 
   export default exemptionReducer 

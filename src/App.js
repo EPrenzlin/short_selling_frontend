@@ -43,7 +43,7 @@ componentDidMount(){
     <Route exact path ="/search" render={() => 
     <div> 
     <SearchForm searchItem={this.props.searchItem}/>
-    <SearchResult result = {this.props.result}/> 
+    <SearchResult result = {this.props.result} refreshExemption={this.props.refreshExemption} deleteExemption={this.props.deleteExemption} /> 
     </div>
     }/>
     </Router>

@@ -27,7 +27,7 @@ return(
 <form className ="text-center" onSubmit={this.onSearch}>
         <label>
         Search Item:
-        <input type="text" name="searchItem" value={this.state.name} onChange={this.handleChange}/>
+        <input type="text" name="searchItem" value={this.state.search} onChange={this.handleChange}/>
         </label>
         <Button type="submit">Search</Button>
         </form> 
