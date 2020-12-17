@@ -3,14 +3,12 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:
 
     switch (action.type) {
     case 'SET_EXEMPTIONS':
-    console.log(action)
     return {
             ...state,
             exemptions: action.exemptions, 
         }
 
     case 'ADD_EXEMPTION':
-        console.log("IN THE ADD EXEMPTION", action) 
         return{
             ...state, 
             exemptions:[...state.exemptions,action.NewExemption],
@@ -35,7 +33,6 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:
         }
 
     case 'SEARCH_FORM_STATE':
-            console.log("in the search form reducer")
             const searchValue = action.search.toString().toUpperCase().replace(/ /g, "") 
             const foundItem = state.exemptions.filter(exemption =>  
                 {
@@ -58,10 +55,6 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:
     }
   }
 
-  const removeSpace = (string) =>{
-    const newText = string.toString().toUpperCase().replace(/ /g, "")
-    return newText
-  }
 
   export default exemptionReducer 
 

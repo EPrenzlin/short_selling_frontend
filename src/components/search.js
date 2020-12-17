@@ -13,7 +13,6 @@ this.setState({search: event.target.value})
 
 onSearch = (event) => {
     event.preventDefault() 
-    console.log("in the search") 
     this.props.searchItem(this.state.search) 
     this.setState({
         search:""

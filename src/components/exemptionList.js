@@ -17,10 +17,8 @@ export default class ExemptionList extends Component{
             })}
             </Row>
             </Container>
-            {/* // {this.props.exemptions.map(exemption => { */}
             </div>
-            // return <ExemptionSingle exemption ={exemption} key={exemption.id} deleteExemption={this.props.deleteExemption}/> 
-            // })}
+
             
         )
       

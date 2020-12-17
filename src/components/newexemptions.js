@@ -13,11 +13,12 @@ export default class NewExemption extends Component{
         this.props.refreshExemption() 
     }
 
+    
     render(){
         return( 
             <div> 
         <DownloadCsv exemptions={this.props.exemptions}/> 
-        <Button variant="outline-warning" onClick={this.refresh}>Refresh</Button>{' '}
+        <Button variant="outline-warning"  size="sm" onClick={this.refresh}>Refresh the page</Button>{' '}
         <Container> 
         <Row md={3}> 
         {this.props.exemptions.map(exemption => {
