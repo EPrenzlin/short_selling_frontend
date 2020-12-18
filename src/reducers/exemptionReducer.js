@@ -16,7 +16,6 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:
         }
 
     case 'DELETE_EXEMPTION':
-        console.log("IN the delete exemption reducer", action)
         return{
             ...state, 
             exemptions: state.exemptions.filter(exemption => exemption.id !== action.id), 
