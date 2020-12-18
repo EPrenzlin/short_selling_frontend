@@ -25,7 +25,6 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:
         }
 
     case 'REFRESH':
-        console.log("in the refresh reducer")
         return{
             ...state,
             exemptions:[...state.exemptions],

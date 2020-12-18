@@ -43,7 +43,6 @@
   }
 
   export const refreshExemption = () =>{
-    console.log("in the refresh action")
     return dispatch =>{
      return  (dispatch({type:'REFRESH'}))
     }

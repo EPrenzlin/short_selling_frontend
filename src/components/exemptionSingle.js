@@ -26,8 +26,6 @@ render(){
         </Card.Body>
         </Card>
         </div>
-
-
     )
 }
 }
