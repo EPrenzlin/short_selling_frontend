@@ -7,16 +7,17 @@ import DownloadCsv from'./DownloadCsv'
 
 export default class SearchResult extends Component{
     
-    onClick = (event) =>{
-        event.preventDefault() 
-        console.log(this.props.exemption.id)
-        this.props.deleteExemption(this.props.exemption.id)
+
+
+    refresh = () => {
+        this.props.refreshExemption() 
     }
 
     render(){
         return(
     <div> 
     <DownloadCsv exemptions={this.props.result}/> 
+    <Button variant="outline-warning"  size="sm" onClick={this.refresh}>Refresh the page</Button>{' '}
     <Container> 
     <Row md={3}> 
     {this.props.result.map(exemption => {

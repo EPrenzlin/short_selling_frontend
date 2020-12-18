@@ -27,7 +27,8 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:
         return{
             ...state,
             exemptions:[...state.exemptions],
-            newExemptions:[] 
+            newExemptions:[],
+            searchResult:[] 
         }
 
     case 'SEARCH_FORM_STATE':

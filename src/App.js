@@ -1,10 +1,10 @@
 import './App.css';
 // all the components
 import ExemptionForm from'./components/exemptionForm'
-import ExemptionList from'./components/exemptionList' 
+import ExemptionList from'./components/exemptionContainer' 
 import NewExemptions from'./components/newexemptions' 
 import SearchForm from'./components/search'
-import SearchResult  from'./components/searchresult'
+import SearchResult  from'./components/searchresultContainer'
 import NavBar from './components/NavBar.js' 
 // import ScrollToTop  from'./components/scrolltotop' 
 
