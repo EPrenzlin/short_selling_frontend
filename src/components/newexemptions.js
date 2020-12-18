@@ -9,7 +9,6 @@ import Button from 'react-bootstrap/Button'
 export default class NewExemption extends Component{
 
     refresh = () => {
-        console.log("I am being pressed")
         this.props.refreshExemption() 
     }
 
