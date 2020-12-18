@@ -1,7 +1,7 @@
 # Short Selling Exemptions Tracker 
 
 # About the Project 
-The short-selling exemptions tracker is a Single Page Appllication that allows users to keep a track of shares in which a Market Making exemption request has been applied for. It futher allows the user to add, delete, download, and search functionality. 
+The short-selling exemptions tracker is a Single Page Appllication that allows users to keep a track of shares in which a Market Making exemption request has been applied for. It futher gives the user to add, delete, download, and search functionality. 
 
 
 # Getting Started 
