@@ -39,7 +39,7 @@ componentDidMount(){
       <NewExemptions  deleteExemption={this.props.deleteExemption} exemptions={this.props.newExemptions} refreshExemption={this.props.refreshExemption}/> 
       </div>
       }/> 
-    <Route exact path ="/home" render={() => <ExemptionList exemptions ={this.props.exemptions} deleteExemption={this.props.deleteExemption}/>} /> 
+    <Route exact path ="/home" render={() => <ExemptionList sortItems={this.props.sortItems} exemptions ={this.props.exemptions} deleteExemption={this.props.deleteExemption} />} /> 
     <Route exact path ="/search" render={() => 
     <div> 
     <SearchForm searchItem={this.props.searchItem}/>
@@ -58,10 +58,12 @@ const mapStateToProps = state =>{
   return {
     exemptions: state.exemptions, 
     newExemptions: state.newExemptions,
-    result: state.searchResult
+    result: state.searchResult, 
   }
 }
 
 
-export default connect(mapStateToProps,{getExemptions, addExemption, deleteExemption, refreshExemption,searchItem})(App)
+const componentConnectorFunction = connect(mapStateToProps,{getExemptions, addExemption, deleteExemption, refreshExemption,searchItem })
+const ConnectedApp = componentConnectorFunction(App)
+export default ConnectedApp
 

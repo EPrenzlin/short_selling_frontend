@@ -40,8 +40,6 @@ const exemptionReducer = (state= {exemptions:[], newExemptions:[], searchResult:
                 { return exemption }}
                 )
 
-
-
             return{
                 ...state, 
                 exemptions:[...state.exemptions], 

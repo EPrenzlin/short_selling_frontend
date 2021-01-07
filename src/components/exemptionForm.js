@@ -1,5 +1,7 @@
 import React, {Component} from 'react' 
 import Button from 'react-bootstrap/Button'
+import {handleStateChange} from '../actions/exemptionActions'  
+import {connect} from 'react-redux'
 
 export default class exemptionForm extends Component{
 
@@ -50,3 +52,4 @@ export default class exemptionForm extends Component{
       
     }
 }
+

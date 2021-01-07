@@ -54,3 +54,11 @@
   }
   }
 
+export const likeMe = () => {
+  return dispatch =>{
+    return(dispatch({type:"LIKE ME"}))
+  }
+}
+
+
+
