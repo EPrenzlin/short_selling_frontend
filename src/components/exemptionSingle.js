@@ -15,12 +15,12 @@ state = {
     }
 
 
-    onLike = (event) => {
-        event.preventDefault() 
-        this.setState({
-            likes: this.state.likes +1 
-        })
-    }
+    // onLike = (event) => {
+    //     event.preventDefault() 
+    //     this.setState({
+    //         likes: this.state.likes +1 
+    //     })
+    // }
 
 
 render(){
@@ -33,7 +33,7 @@ render(){
             ISIN: {this.props.exemption.isin} <br/>
             Stock Market: {this.props.exemption.stock_market} <br/> 
             <Button variant="primary" size='sm' onClick={this.onClick}>Remove from DB</Button> <br/> 
-            <Button variant="dark" size='sm' onClick={this.onLike}>Like me: {this.state.likes} </Button> <br/> 
+            {/* <Button variant="dark" size='sm' onClick={this.onLike}>Like me: {this.state.likes} </Button> <br/>  */}
             </Card.Text>
         </Card.Body>
         </Card>
